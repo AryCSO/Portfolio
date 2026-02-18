@@ -48,6 +48,7 @@ Este projeto é um site de portfólio **one-page** (página única) com navegaç
 <p></p>
 
 <p align="center">
+  <a href="https://arycso.github.io/Portfolio/" target="_blank" rel="external">
       <img src="https://img.shields.io/badge/Acessar Portfólio-D4AF37?style=for-the-badge&logoColor=2b2b2b">
     </a>
 </p>
