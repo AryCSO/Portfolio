@@ -1,297 +1,705 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="scroll-smooth">
+<html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Ary.dev - Desenvolvedor & Designer</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="icon" type="image/png" href="image 1.png">
+  <title>Aryel Oliveira — Desenvolvedor Flutter e Dart</title>
+  <meta name="description"
+    content="Desenvolvedor em Aparecida de Goiânia. Aplicações multiplataforma em Flutter e Dart para Android, iOS, Web e desktop, integradas a APIs REST, bancos relacionais, Docker e máquinas virtuais.">
+  <meta name="author" content="Aryel S. Oliveira">
+  <link rel="canonical" href="https://arycso.github.io/Portfolio/">
+  <meta name="theme-color" content="#0F0E0C">
 
-    <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Open Graph: é o que aparece quando o link é colado no LinkedIn ou WhatsApp -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Ary.dev">
+  <meta property="og:url" content="https://arycso.github.io/Portfolio/">
+  <meta property="og:title" content="Aryel Oliveira — Desenvolvedor Flutter e Dart">
+  <meta property="og:description"
+    content="Uma base de código para Android, iOS, Web e desktop. Consumo de APIs REST, bancos relacionais e ambientes em Docker e máquinas virtuais.">
+  <meta property="og:image" content="https://arycso.github.io/Portfolio/assets/perfil.png">
+  <meta name="twitter:card" content="summary_large_image">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=M+PLUS+Rounded+1c:wght@700&display=swap"
-        rel="stylesheet">
+  <link rel="icon" href="assets/avatar.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/avatar.png">
 
-    <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=M+PLUS+Rounded+1c:wght@700&display=swap">
 
+  <link rel="stylesheet" href="styles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Aryel S. Oliveira",
+    "jobTitle": "Desenvolvedor de Software",
+    "url": "https://arycso.github.io/Portfolio/",
+    "email": "mailto:arycarvalho1969@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Aparecida de Goiânia",
+      "addressRegion": "GO",
+      "addressCountry": "BR"
+    },
+    "sameAs": [
+      "https://github.com/AryCSO",
+      "https://www.linkedin.com/in/aryel-s-oliveira-298169271/"
+    ],
+    "knowsAbout": ["Flutter", "Dart", "REST", "Docker", "SQL", "Firebird", "Git", "JavaScript", "Máquinas virtuais", "Oracle Cloud"]
+  }
+  </script>
 </head>
 
-<body data-theme="dark">
+<body>
 
-    <div class="fixed top-4 left-4 z-50 text-lg font-bold text-primary opacity-50 select-none">
-        Ary.dev
+  <script>
+    /* Aplica o tema antes da primeira pintura, senão quem salvou "claro"
+       num sistema escuro vê um flash da cor errada. O script.js assume daqui. */
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem('theme'); } catch (e) { }
+      if (t !== 'light' && t !== 'dark') {
+        t = (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) ? 'light' : 'dark';
+      }
+      document.body.setAttribute('data-theme', t);
+    })();
+  </script>
+
+  <a class="skip" href="#conteudo">Pular para o conteúdo</a>
+  <div id="progress" aria-hidden="true"></div>
+
+  <!-- ícones: sprite local, sem dependência de CDN -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="i-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 9 5-9 5-9-5 9-5Z"/><path d="m3 17 9 5 9-5"/><path d="m3 12 9 5 9-5"/></symbol>
+    <symbol id="i-briefcase" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></symbol>
+    <symbol id="i-cap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6"/><path d="M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
+    <symbol id="i-up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 7-7 7 7"/><path d="M12 19V5"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></symbol>
+    <symbol id="i-github" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.6 18.3 5 18.3 5c.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3Z"/></symbol>
+    <symbol id="i-linkedin" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05a3.74 3.74 0 0 1 3.37-1.85c3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.55V9h3.57v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0Z"/></symbol>
+    <symbol id="i-whatsapp" viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.25-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.42-.08-.13-.28-.2-.57-.35ZM12.05 21.8h-.02a9.8 9.8 0 0 1-4.99-1.37l-.36-.21-3.7.97.99-3.61-.24-.37a9.79 9.79 0 0 1-1.5-5.22c0-5.4 4.4-9.8 9.82-9.8a9.75 9.75 0 0 1 6.94 2.88 9.72 9.72 0 0 1 2.87 6.93c0 5.4-4.4 9.8-9.81 9.8ZM20.5 3.49A11.7 11.7 0 0 0 12.05 0C5.6 0 .35 5.25.34 11.7c0 2.06.54 4.08 1.57 5.86L.24 24l6.58-1.73a11.7 11.7 0 0 0 5.23 1.33h.01c6.45 0 11.7-5.25 11.7-11.7 0-3.13-1.21-6.07-3.42-8.28Z"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></symbol>
+    <symbol id="i-external" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1Z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-headset" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5a9 9 0 0 1 18 0v5a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"/></symbol>
+    <symbol id="i-smartphone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="20" x="5" y="2" rx="2"/><path d="M12 18h.01"/></symbol>
+    <symbol id="i-server" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="8" x="2" y="2" rx="2"/><rect width="20" height="8" x="2" y="14" rx="2"/><path d="M6 6h.01M6 18h.01"/></symbol>
+    <symbol id="i-database" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></symbol>
+    <symbol id="i-box" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></symbol>
+    <symbol id="i-palette" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><path d="M12 2a10 10 0 1 0 0 20 2 2 0 0 0 1.68-3.09 2 2 0 0 1 1.68-3.08h1.63A4.01 4.01 0 0 0 21 11.83 10 10 0 0 0 12 2Z"/></symbol>
+    <symbol id="i-award" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15.48 12.35 1.86 7.15-5.34-3.2-5.34 3.2 1.86-7.15"/><circle cx="12" cy="8" r="6"/></symbol>
+    <symbol id="i-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></symbol>
+    <symbol id="i-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></symbol>
+    <symbol id="i-grid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></symbol>
+  </svg>
+
+  <a class="brand" href="#home">Ary.dev</a>
+
+  <div class="nav-shell">
+    <nav class="nav" aria-label="Navegação principal">
+      <a href="#sobre" title="Sobre"><svg aria-hidden="true"><use href="#i-user"/></svg><span class="lbl">Sobre</span></a>
+      <a href="#plataformas" title="Plataformas"><svg aria-hidden="true"><use href="#i-grid"/></svg><span class="lbl">Plataformas</span></a>
+      <a href="#trago" title="O que eu trago"><svg aria-hidden="true"><use href="#i-shield"/></svg><span class="lbl">O que eu trago</span></a>
+      <a href="#stack" title="Stack"><svg aria-hidden="true"><use href="#i-layers"/></svg><span class="lbl">Stack</span></a>
+      <a href="#trabalhos" title="Trabalhos"><svg aria-hidden="true"><use href="#i-briefcase"/></svg><span class="lbl">Trabalhos</span></a>
+      <a href="#formacao" title="Formação"><svg aria-hidden="true"><use href="#i-cap"/></svg><span class="lbl">Formação</span></a>
+      <a href="#contato" title="Contato"><svg aria-hidden="true"><use href="#i-mail"/></svg><span class="lbl">Contato</span></a>
+    </nav>
+  </div>
+
+  <main id="conteudo">
+
+    <!-- ===================== HERO ===================== -->
+    <section id="home" class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-photo">
+          <img src="assets/perfil.png" alt="Retrato ilustrado de Aryel Oliveira" width="320" height="420" fetchpriority="high">
+        </div>
+        <div>
+          <p class="hero-eyebrow">Desenvolvedor de software &middot; Aparecida de Goiânia, GO</p>
+          <h1><span class="gold">Aryel</span> Oliveira</h1>
+          <p class="hero-pitch">
+            Desenvolvo <strong>aplicações multiplataforma em Flutter e Dart</strong> para Android, iOS,
+            Web e desktop, integradas a <strong>APIs REST</strong> e bancos relacionais. Código que roda
+            em produção todo dia, numa base grande e com bastante legado.
+          </p>
+          <ul class="facts">
+            <li>Android &middot; iOS &middot; Web &middot; Desktop</li>
+            <li>Flutter &middot; Dart</li>
+            <li>Sistema em produção</li>
+          </ul>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#trabalhos">
+              <svg aria-hidden="true"><use href="#i-briefcase"/></svg> Ver o trabalho
+            </a>
+            <a class="btn" href="https://github.com/AryCSO" target="_blank" rel="noopener noreferrer">
+              <svg aria-hidden="true"><use href="#i-github"/></svg> GitHub
+            </a>
+            <a class="btn" href="assets/AryelSOliveira.pdf" download>
+              <svg aria-hidden="true"><use href="#i-download"/></svg> Currículo
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== MARQUEE ===================== -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track" data-marquee>
+        <span class="marquee-item hot">Flutter</span><span class="marquee-item hot">Dart</span>
+        <span class="marquee-item">Android</span><span class="marquee-item">iOS</span>
+        <span class="marquee-item">Flutter Web</span><span class="marquee-item">Desktop</span>
+        <span class="marquee-item">MVVM</span><span class="marquee-item">UI/UX</span>
+        <span class="marquee-item">Figma</span><span class="marquee-item">HTML</span>
+        <span class="marquee-item">CSS</span><span class="marquee-item">JavaScript</span>
+        <span class="marquee-item">Design responsivo</span>
+      </div>
     </div>
-    <header class="fixed top-4 left-1/2 -translate-x-1/2 z-50">
-        <nav class="dynamic-island flex items-center gap-4 md:gap-6 px-6 py-3 rounded-full shadow-lg">
-            <a href="#sobre" class="nav-link group" title="Sobre">
-                <i data-lucide="user"
-                    class="w-5 h-5 text-gray-400 group-hover:text-primary transition-colors duration-300"></i>
-            </a>
-            <a href="#skills" class="nav-link group" title="Skills">
-                <i data-lucide="wrench"
-                    class="w-5 h-5 text-gray-400 group-hover:text-primary transition-colors duration-300"></i>
-            </a>
-            <a href="#trabalhos" class="nav-link group" title="Trabalhos">
-                <i data-lucide="briefcase"
-                    class="w-5 h-5 text-gray-400 group-hover:text-primary transition-colors duration-300"></i>
-            </a>
-            <a href="#formacao" class="nav-link group" title="Formação">
-                <i data-lucide="graduation-cap"
-                    class="w-5 h-5 text-gray-400 group-hover:text-primary transition-colors duration-300"></i>
-            </a>
-            <a href="#contato" class="nav-link group" title="Contato">
-                <i data-lucide="mail"
-                    class="w-5 h-5 text-gray-400 group-hover:text-primary transition-colors duration-300"></i>
-            </a>
-        </nav>
-    </header>
+    <div class="marquee reverse" aria-hidden="true">
+      <div class="marquee-track" data-marquee>
+        <span class="marquee-item hot">Docker</span><span class="marquee-item hot">Máquinas virtuais</span>
+        <span class="marquee-item hot">Oracle Cloud</span><span class="marquee-item">Portainer</span>
+        <span class="marquee-item">Proxy reverso</span><span class="marquee-item">SSH</span>
+        <span class="marquee-item">VPN</span><span class="marquee-item">Firewall</span>
+        <span class="marquee-item">REST</span><span class="marquee-item">JSON</span>
+        <span class="marquee-item">XML</span><span class="marquee-item">Firebird</span>
+        <span class="marquee-item">SQL</span><span class="marquee-item">Firebase</span>
+        <span class="marquee-item">Git</span><span class="marquee-item">Windows Server</span>
+      </div>
+    </div>
 
-    <main>
-        <section id="homee"
-            class="h-screen w-full flex flex-col md:flex-row items-center justify-center md:justify-between overflow-hidden">
-            <!-- Imagem à Esquerda -->
-            <div class="w-full md:w-[37.5%] h-1/2 md:h-full flex items-center justify-center">
-                <img src="assets/perfil.png" alt="Ilustração de Aryel Oliveira"
-                    class="hero-image-fade object-cover w-full h-full">
-            </div>
-            <div class="w-full md:w-[62.5%] flex items-center justify-center md:justify-end p-8 md:pr-16 lg:pr-24">
-                <div class="max-w-md text-center md:text-right">
-                    <h1 class="text-4xl md:text-6xl font-bold mb-4">
-                        <span class="text-primary">Aryel</span> Oliveira
-                    </h1>
-                    <div class="font-mplus font-bold text-base md:text-xl uppercase tracking-wider"
-                        style="color: var(--text-color);">
-                        <p>
-                            <span>Transformando </span>
-                            <span class="text-primary">Ideias</span>
-                        </p>
-                        <p>
-                            <span>em </span>
-                            <span class="text-primary">Realidade Digital</span>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section id="sobre" class="py-20 md:py-32">
-            <div class="container mx-auto px-6">
-                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Sobre Mim</h2>
-                <div class="card max-w-4xl mx-auto p-8 md:p-12 rounded-xl">
-                    <p class="text-lg leading-relaxed text-justify mb-8">
-                        Olá! Sou Aryel Oliveira, meu objetivo é entregar excelência e comprometimento em cada trabalho,
-                        tornar a experiência de cada usuário uma interação fácil e acessível, deixar sempre uma boa
-                        marca e dedicação em cada projeto. Sou estudante de Análise e Desenvolvimento de Sistemas e
-                        tento sempre me manter em constante aprimoramento.
-                    </p>
-                    <div class="flex justify-end">
-                        <img src="assets/assinatura.png" alt="Assinatura de Aryel S Oliveira" class="h-28">
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section id="skills" class="py-20 md:py-32">
-            <div class="container mx-auto px-6">
-                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Skills</h2>
-                <div class="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
-                    <div
-                        class="card flex flex-col items-center p-6 rounded-xl text-center hover:scale-105 transition-transform">
-                        <i data-lucide="figma" class="w-12 h-12 text-primary mb-4"></i>
-                        <h3 class="font-bold text-lg">UI/UX Design</h3>
-                        <p class="text-sm text-gray-400">Figma</p>
-                    </div>
-                    <div
-                        class="card flex flex-col items-center p-6 rounded-xl text-center hover:scale-105 transition-transform">
-                        <i data-lucide="code" class="w-12 h-12 text-primary mb-4"></i>
-                        <h3 class="font-bold text-lg">Frontend</h3>
-                        <p class="text-sm text-gray-400">HTML, CSS, JS</p>
-                    </div>
-                    <div
-                        class="card flex flex-col items-center p-6 rounded-xl text-center hover:scale-105 transition-transform">
-                        <i data-lucide="database" class="w-12 h-12 text-primary mb-4"></i>
-                        <h3 class="font-bold text-lg">DataBase</h3>
-                        <p class="text-sm text-gray-400">FireBird, mySQL</p>
-                    </div>
-                    <div
-                        class="card flex flex-col items-center p-6 rounded-xl text-center hover:scale-105 transition-transform">
-                        <i data-lucide="smartphone" class="w-12 h-12 text-primary mb-4"></i>
-                        <h3 class="font-bold text-lg">Mobile</h3>
-                        <p class="text-sm text-gray-400">Dart</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section id="trabalhos" class="py-20 md:py-32">
-            <div class="container mx-auto px-6">
-                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Trabalhos</h2>
-                <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
-                    <div class="card rounded-xl overflow-hidden group flex flex-col">
-                        <img src="assets/verdehub.png" alt="Logo do projeto VerdeHub"
-                            class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
-                        <div class="p-6 flex flex-col flex-grow">
-                            <h3 class="text-xl font-bold mb-2">VerdeHub</h3>
-                            <p class="text-gray-400 mb-4 text-justify flex-grow">Um sistema intranet para a empresa
-                                VerdeLog, focada em trazer praticidade e conforto enquanto possibilita a conexão entre
-                                setores dentro da empresa, com uma interface amigável e completa, tendo presença de
-                                postagem e comentários, sistemas de chat, grupos privados entre outras funcionalidades
-                                de uma rede social, trabalho extensionista interdisciplinar desenvolvido em grupo.</p>
-                            <div class="mt-auto text-sm text-gray-400">
-                                <p><strong>Linguagens:</strong> HTML, CSS, JavaScript, PHP</p>
-                                <p><strong>Framework:</strong> YII2</p>
-                                <p><strong>Banco de dados:</strong> Relacional SQL</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card rounded-xl overflow-hidden group flex flex-col">
-                        <img src="assets/a2Lab.png" alt="Logo do projeto A2 Lab"
-                            class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
-                        <div class="p-6 flex flex-col flex-grow">
-                            <h3 class="text-xl font-bold mb-2">A2 Lab</h3>
-                            <p class="text-gray-400 mb-4 text-justify flex-grow">Site institucional desenvolvido para a
-                                empresa A2 Lab, especializada em manutenção de consoles, PCs e montagem de computadores
-                                personalizados. O projeto foi construído com foco em responsividade e dedicação aos
-                                detalhes, proporcionando uma experiência fluida em qualquer dispositivo.</p>
-                            <div class="mt-auto text-sm text-gray-400 mb-4">
-                                <p><strong>Linguagens:</strong> HTML, CSS, JavaScript</p>
-                            </div>
-                            <a href="https://a2lab.vercel.app" target="_blank" rel="noopener noreferrer"
-                                class="inline-block text-center px-4 py-2 rounded-full border border-primary text-primary font-semibold hover:bg-primary hover:text-black transition-colors duration-300">Acessar</a>
-                        </div>
-                    </div>
-                    <div class="card rounded-xl overflow-hidden group flex flex-col">
-                        <img src="assets/artedoce.png" alt="Logo do projeto"
-                            class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
-                        <div class="p-6 flex flex-col flex-grow">
-                            <h3 class="text-xl font-bold mb-2">Arte Doce</h3>
-                            <p class="text-gray-400 mb-4 text-justify flex-grow">Projeto de site para confeitaria,
-                                desenvolvido para valorizar a vitrine de doces artesanais e bolos sob encomenda. O
-                                layout foi pensado para destacar trabalhos em alta qualidade feitos na confeitaria,
-                                facilitar a navegação e conduzir o visitante ao objetivo principal: pedir orçamento e
-                                fazer encomendas com poucos cliques.
-                                O site conta com seções de produtos, apresentação da marca, diferenciais, depoimentos e
-                                chamadas estratégicas para contato via WhatsApp/Direct. Design responsivo, carregamento
-                                otimizado e estrutura preparada para futuras expansões, como catálogo completo e
-                                integração com formulário.</p>
-                            <div class="mt-auto text-sm text-gray-400 mb-4">
-                                <p><strong>Linguagens:</strong> HTML, CSS, JavaScript</p>
-                            </div>
-                            <a href="https://artedoce.vercel.app" target="_blank" rel="noopener noreferrer"
-                                class="inline-block text-center px-4 py-2 rounded-full border border-primary text-primary font-semibold hover:bg-primary hover:text-black transition-colors duration-300">Acessar</a>
-                        </div>
-                    </div>
-                    <div class="card rounded-xl overflow-hidden group flex flex-col">
-                        <img src="assets/datareyWeb.png" alt="Data Rey Web integração"
-                            class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
-                        
-                        <div class="p-6 flex flex-col flex-grow">
-                            <h3 class="text-xl font-bold mb-2">Datarey Web - Mensagens</h3>
-                            <p class="text-gray-400 mb-4 text-justify flex-grow">Desenvolvi um sistema de mensagens integrado ao WhatsApp para a Datarey Sistemas, 
-                                com o objetivo de ampliar as funcionalidades do Datarey Web (plataforma de gerenciamento de dados). A solução foi estruturada com 
-                                base no padrão MVVM, garantindo melhor organização do código, manutenção simplificada e maior reaproveitamento decomponentes. 
-                                O sistema oferece envio automatizado de mensagens para diferentes cenários, como datas comemorativas, uso contínuo de 
-                                medicamentos e cobranças de pendências financeiras. Também inclui um módulo de estatísticas e relatórios, permitindo ao usuário 
-                                acompanhar o alcance, a efetividade e a repercussão das campanhas de mensagens. Além disso, implementei uma aba de gestão de clientes, 
-                                com recursos para definir preferências de comunicação e registrar contatos que não desejam receber mensagens. O resultado é uma 
-                                ferramenta completa, orientada a performance, organização e experiência do usuário, integrada ao fluxo operacional do sistema principal.
-                            </p>
-                            <div class="mt-auto text-sm text-gray-400">
-                                <p><strong>Linguagens:</strong> Dart</p>
-                                <p><strong>Framework:</strong> Flutter</p>
-                                <p><strong>Banco de dados:</strong> FireBird</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <!-- ===================== SOBRE ===================== -->
+    <section id="sobre">
+      <div class="wrap">
+        <p class="sec-label">01 &middot; Sobre</p>
+        <h2 class="sec-title">Não paro na tela quando o problema desce</h2>
 
-        <section id="formacao" class="py-20 md:py-32">
-            <div class="container mx-auto px-6">
-                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Formação & Certificados</h2>
-                <div class="max-w-4xl mx-auto space-y-8">
-                    <div class="card p-8 rounded-xl">
-                        <div class="flex items-center mb-4">
-                            <i data-lucide="graduation-cap" class="w-10 h-10 text-primary mr-4"></i>
-                            <h3 class="text-2xl font-bold">Formação Acadêmica</h3>
-                        </div>
-                        <p class="font-semibold text-lg">Análise e Desenvolvimento de Sistemas</p>
-                        <p class="text-gray-400">Universidade UniFANAP</p>
-                        <p class="text-gray-400">Conclusão: 2025</p>
-                    </div>
-                    <div class="card p-8 rounded-xl">
-                        <div class="flex items-center mb-4">
-                            <i data-lucide="award" class="w-10 h-10 text-primary mr-4"></i>
-                            <h3 class="text-2xl font-bold">Certificados</h3>
-                        </div>
-                        <div class="space-y-4">
-                            <div>
-                                <p class="font-semibold text-lg">Linguagem de Programação Python</p>
-                                <p class="text-gray-400 text-sm">Fundação Bradesco</p>
-                            </div>
-                            <div>
-                                <p class="font-semibold text-lg">PHP Moderno</p>
-                                <p class="text-gray-400 text-sm">Gustavo Guanabara</p>
-                            </div>
-                            <div>
-                                <p class="font-semibold text-lg">HTML5 e CSS3</p>
-                                <p class="text-gray-400 text-sm">Gustavo Guanabara</p>
-                            </div>
-                            <div>
-                                <p class="font-semibold text-lg">MySQL</p>
-                                <p class="text-gray-400 text-sm">Gustavo Guanabara</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <div class="about reveal">
+          <p>
+            Sou desenvolvedor na DataRey Sistemas, onde trabalho num
+            <strong>aplicativo multiplataforma em Flutter</strong> que roda em Android, iOS, Web e
+            desktop &mdash; ponto de venda, pedidos, estoque, entrega e relatórios. É um produto usado
+            todo dia por empresas reais, então a régua não é a de um projeto de estudo: precisa
+            funcionar com dado sujo, conexão ruim e usuário com pressa.
+          </p>
+          <p>
+            Do lado dos dados, <strong>consumo as APIs REST</strong> que alimentam o aplicativo:
+            autenticação, contrato de requisição e resposta, tratamento de erro e integração com um
+            banco legado em <strong>Firebird</strong>. Também opero os ambientes onde o sistema roda
+            &mdash; <strong>máquinas virtuais e containers Docker</strong>, com acesso remoto por SSH,
+            VPN e Portainer, abertura de portas, proxy reverso e diagnóstico de rede quando algo cai.
+            Fora do trabalho, provisionei do zero uma VM na <strong>Oracle Cloud</strong> para um
+            projeto meu: instância, rede, firewall e deploy.
+          </p>
+          <p>
+            Antes de programar, passei um ano no suporte técnico desses mesmos sistemas, o que me deu
+            uma vantagem difícil de aprender depois: eu sei como o usuário quebra aquilo que eu escrevo.
+          </p>
+
+          <div class="sign">
+            <div class="sign-mark" role="img" aria-label="Assinatura de Aryel S. Oliveira"></div>
+            <span class="sign-cap">Aryel S. Oliveira</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PLATAFORMAS / ARQUITETURA ===================== -->
+    <section id="plataformas">
+      <div class="wrap">
+        <p class="sec-label">02 &middot; Plataformas</p>
+        <h2 class="sec-title">Uma base de código, quatro destinos &mdash; e a infra embaixo</h2>
+        <p class="sec-intro">
+          Esta é a forma do sistema em que eu trabalho todo dia. Vale mais que uma lista de
+          tecnologias porque mostra até onde eu chego quando algo quebra.
+        </p>
+
+        <div class="stats reveal">
+          <div>
+            <p class="stat-n" data-count="4">0</p>
+            <p class="stat-l">plataformas a partir de uma base de código só</p>
+          </div>
+          <div>
+            <p class="stat-n" data-count="21"><span></span><span class="suf">meses</span></p>
+            <p class="stat-l">no setor, do suporte técnico ao desenvolvimento</p>
+          </div>
+          <div>
+            <p class="stat-n" data-count="3">0</p>
+            <p class="stat-l">camadas que eu atravesso: cliente, API e infraestrutura</p>
+          </div>
+          <div>
+            <p class="stat-n">24<span class="suf">/7</span></p>
+            <p class="stat-l">sistema em produção, usado por empresas todo dia</p>
+          </div>
+        </div>
+
+        <div class="diagram-wrap reveal">
+          <svg class="diagram" viewBox="0 0 820 545" role="img"
+               aria-label="Diagrama: uma base de código em Flutter e Dart gera aplicações para desktop, web e mobile; abaixo dela, a camada de API REST; na base, a infraestrutura em nuvem, máquina virtual e containers Docker.">
+
+            <!-- ---------- camada de apresentação ---------- -->
+            <g class="dg-node n1">
+              <text class="dg-t" x="150" y="18">Desktop</text>
+              <text class="dg-s" x="150" y="34">WINDOWS</text>
+              <rect class="dg-box" x="62" y="46" width="176" height="104" rx="8"/>
+              <rect class="dg-ink" x="76" y="60" width="148" height="66" rx="3"/>
+              <path class="dg-ink" d="M88 76h72M88 90h108M88 104h56"/>
+              <rect class="dg-fill" x="140" y="150" width="20" height="12"/>
+              <path class="dg-ink" d="M120 168h60"/>
+            </g>
+
+            <g class="dg-node n2">
+              <text class="dg-t" x="410" y="18">Web</text>
+              <text class="dg-s" x="410" y="34">NAVEGADOR</text>
+              <rect class="dg-box" x="322" y="46" width="176" height="104" rx="8"/>
+              <path class="dg-ink" d="M322 74h176"/>
+              <circle class="dg-fill" cx="338" cy="60" r="3.5"/>
+              <circle class="dg-fill" cx="350" cy="60" r="3.5"/>
+              <circle class="dg-fill" cx="362" cy="60" r="3.5"/>
+              <path class="dg-ink" d="M340 94h140M340 108h96M340 122h118"/>
+            </g>
+
+            <g class="dg-node n3">
+              <text class="dg-t" x="670" y="18">Mobile</text>
+              <text class="dg-s" x="670" y="34">ANDROID · iOS</text>
+              <rect class="dg-box" x="636" y="42" width="68" height="122" rx="11"/>
+              <rect class="dg-ink" x="645" y="56" width="50" height="88" rx="3"/>
+              <path class="dg-ink" d="M659 49h22M659 155h22"/>
+              <path class="dg-ink" d="M655 70h30M655 82h20M655 94h30"/>
+            </g>
+
+            <!-- ---------- ligações para a base de código ---------- -->
+            <path class="dg-link d1" d="M150 176 L150 202 L380 202 L380 232"/>
+            <path class="dg-link d2" d="M410 150 L410 232"/>
+            <path class="dg-link d3" d="M670 170 L670 202 L440 202 L440 232"/>
+
+            <!-- ---------- base de código ---------- -->
+            <g class="dg-node n4">
+              <rect class="dg-box-hi" x="250" y="232" width="320" height="58" rx="29"/>
+              <text class="dg-t" x="410" y="257">Uma base de código</text>
+              <text class="dg-s dg-s-hi" x="410" y="275">FLUTTER · DART</text>
+            </g>
+
+            <path class="dg-link d4" d="M410 290 L410 338"/>
+
+            <!-- ---------- camada de API ---------- -->
+            <g class="dg-node n5">
+              <rect class="dg-box" x="300" y="338" width="220" height="50" rx="25"/>
+              <text class="dg-t" x="410" y="360">API REST</text>
+              <text class="dg-s" x="410" y="377">CONSUMO · AUTENTICAÇÃO</text>
+            </g>
+
+            <!-- ---------- ligações para a infraestrutura ---------- -->
+            <path class="dg-link d5" d="M410 388 L410 408 L180 408 L180 434"/>
+            <path class="dg-link d5" d="M410 388 L410 434"/>
+            <path class="dg-link d5" d="M410 388 L410 408 L650 408 L650 434"/>
+
+            <!-- ---------- infraestrutura ---------- -->
+            <g class="dg-node n6">
+              <g transform="translate(128 436)">
+                <path class="dg-ink-hi" d="M20 56 C8 56 0 47 2 36 C4 27 13 21 22 23 C26 8 42 0 56 5 C66 8 73 17 74 27 C85 24 97 32 98 43 C99 50 94 56 87 56 Z"/>
+              </g>
+              <text class="dg-s dg-s-hi" x="180" y="524">NUVEM</text>
+
+              <rect class="dg-box-hi" x="340" y="434" width="140" height="58" rx="8"/>
+              <rect class="dg-ink-hi" x="354" y="447" width="112" height="32" rx="4" stroke-dasharray="4 3"/>
+              <text class="dg-s dg-s-hi" x="410" y="469">VM</text>
+              <text class="dg-s dg-s-hi" x="410" y="524">MÁQUINA VIRTUAL</text>
+
+              <rect class="dg-box" x="598" y="434" width="104" height="17" rx="4"/>
+              <rect class="dg-box" x="598" y="455" width="104" height="17" rx="4"/>
+              <rect class="dg-box" x="598" y="476" width="104" height="17" rx="4"/>
+              <circle class="dg-fill-hi" cx="610" cy="442.5" r="3"/>
+              <circle class="dg-fill-hi" cx="610" cy="463.5" r="3"/>
+              <circle class="dg-fill-hi" cx="610" cy="484.5" r="3"/>
+              <text class="dg-s dg-s-hi" x="650" y="524">CONTAINERS DOCKER</text>
+            </g>
+          </svg>
+
+          <div class="dg-legend">
+            <span class="on"><i></i> O que eu construo e opero</span>
+            <span><i></i> Camada que eu consumo</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== O QUE EU TRAGO ===================== -->
+    <section id="trago">
+      <div class="wrap">
+        <p class="sec-label">03 &middot; O que eu trago</p>
+        <h2 class="sec-title">O que muda quando eu entro no time</h2>
+        <p class="sec-intro">
+          Não é lista de tecnologia &mdash; essa vem depois. É como eu trabalho, e o que isso costuma
+          economizar para o time.
+        </p>
+
+        <div class="value reveal">
+          <div>
+            <span class="ico"><svg aria-hidden="true"><use href="#i-layers"/></svg></span>
+            <h3>Sigo o problema até onde ele estiver</h3>
+            <p>
+              Flutter na tela, API e banco no meio, Docker e máquina virtual embaixo. Não devolvo o
+              chamado dizendo &ldquo;é do backend&rdquo;: consigo acompanhar uma requisição da
+              interface até a resposta da API, o dado no banco ou o container que caiu, e chegar com
+              a causa na mão.
+            </p>
+          </div>
+          <div>
+            <span class="ico"><svg aria-hidden="true"><use href="#i-shield"/></svg></span>
+            <h3>Escrevo para produção, não para demo</h3>
+            <p>
+              Meu código roda em sistema que empresa usa para faturar, com auditoria externa por
+              cima. Isso educa a régua: caso de borda, validação de entrada e rastreabilidade entram
+              como parte do requisito, não como refino que fica para depois.
+            </p>
+          </div>
+          <div>
+            <span class="ico"><svg aria-hidden="true"><use href="#i-headset"/></svg></span>
+            <h3>Sei depurar de verdade</h3>
+            <p>
+              Passei um ano no suporte técnico antes de programar, resolvendo problema de gente real
+              sob prazo. Aprendi a reproduzir antes de chutar, ler log, isolar variável e transformar
+              &ldquo;não funciona&rdquo; em causa concreta. É a habilidade que mais uso até hoje.
+            </p>
+          </div>
+          <div>
+            <span class="ico"><svg aria-hidden="true"><use href="#i-box"/></svg></span>
+            <h3>Não fujo de código legado nem de domínio difícil</h3>
+            <p>
+              Trabalho numa base grande e antiga, integrada a banco legado e a sistema externo com
+              contrato rígido. Já precisei aprender regra de negócio densa do zero para poder
+              implementá-la. Não preciso de projeto novo e limpo para render.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== STACK ===================== -->
+    <section id="stack">
+      <div class="wrap">
+        <p class="sec-label">04 &middot; Stack</p>
+        <h2 class="sec-title">Com o que eu trabalho</h2>
+        <p class="sec-intro">
+          Em destaque, o que uso todo dia em sistema que está no ar. A última linha é honesta de
+          propósito: são tecnologias com que já trabalhei, mas em que ainda não me considero fluente.
+        </p>
+
+        <div class="stack reveal">
+          <div class="stack-row">
+            <h3><svg aria-hidden="true"><use href="#i-smartphone"/></svg> Mobile, Web &amp; Desktop</h3>
+            <ul class="chips">
+              <li class="key">Flutter</li><li class="key">Dart</li>
+              <li>Android</li><li>iOS</li><li>Flutter Web</li><li>Desktop</li><li>MVVM</li><li>Design responsivo</li>
+            </ul>
+          </div>
+          <div class="stack-row">
+            <h3><svg aria-hidden="true"><use href="#i-external"/></svg> APIs &amp; Integrações</h3>
+            <ul class="chips">
+              <li class="key">Consumo de APIs REST</li>
+              <li>JSON</li><li>XML</li><li>Autenticação &amp; JWT</li><li>Tratamento de erro</li>
+              <li>Webhooks</li><li>WhatsApp</li><li>Sistemas ERP</li>
+            </ul>
+          </div>
+          <div class="stack-row">
+            <h3><svg aria-hidden="true"><use href="#i-database"/></svg> Dados</h3>
+            <ul class="chips">
+              <li class="key">Firebird</li><li>SQL</li><li>MySQL</li><li>Firebase</li><li>Modelagem relacional</li>
+            </ul>
+          </div>
+          <div class="stack-row">
+            <h3><svg aria-hidden="true"><use href="#i-server"/></svg> Servidores &amp; VMs</h3>
+            <ul class="chips">
+              <li class="key">Máquinas virtuais</li><li class="key">Oracle Cloud</li><li class="key">Proxy reverso</li>
+              <li>Provisionamento de VM</li><li>SaveInCloud</li><li>Portas e firewall</li>
+              <li>SSH e chaves</li><li>VPN</li><li>Acesso remoto (RDP)</li>
+              <li>Windows Server</li><li>Deploy de aplicação</li><li>Diagnóstico de rede</li>
+            </ul>
+          </div>
+          <div class="stack-row">
+            <h3><svg aria-hidden="true"><use href="#i-box"/></svg> Containers &amp; Ferramentas</h3>
+            <ul class="chips">
+              <li class="key">Docker</li><li class="key">Portainer</li>
+              <li>Redes Docker</li><li>WSL</li><li>Git</li>
+            </ul>
+          </div>
+          <div class="stack-row">
+            <h3><svg aria-hidden="true"><use href="#i-palette"/></svg> Produto &amp; UI</h3>
+            <ul class="chips">
+              <li>UI/UX</li><li>Figma</li><li>Prototipagem</li><li>HTML</li><li>CSS</li><li>JavaScript</li>
+            </ul>
+          </div>
+          <div class="stack-row">
+            <h3><svg aria-hidden="true"><use href="#i-layers"/></svg> Base inicial</h3>
+            <ul class="chips">
+              <li>Linux</li><li>PHP</li><li>Go</li><li>Python</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== TRABALHOS ===================== -->
+    <section id="trabalhos">
+      <div class="wrap">
+        <p class="sec-label">05 &middot; Trabalhos</p>
+        <h2 class="sec-title">O que eu construí</h2>
+        <p class="sec-intro">
+          Começa pelo trabalho principal, que é onde está o sistema em produção. Depois vêm os
+          projetos próprios e acadêmicos.
+        </p>
+
+        <article class="featured reveal">
+          <div class="featured-media">
+            <img src="assets/datareyWeb.png" alt="Interface do sistema Datarey" width="420" height="240" loading="lazy">
+          </div>
+          <div class="featured-body">
+            <span class="tag">Trabalho atual</span>
+            <h3>DataRey Sistemas</h3>
+            <p class="role">Desenvolvedor &middot; nov 2025 – atual &nbsp;|&nbsp; Suporte técnico &middot; dez 2024 – nov 2025</p>
+            <ul>
+              <li>
+                <strong>Aplicativo multiplataforma em Flutter</strong> para Android, iOS, Web e
+                desktop, a partir de uma base de código só: ponto de venda, pedidos, estoque, entrega
+                e relatórios.
+              </li>
+              <li>
+                <strong>Consumo das APIs REST</strong> que alimentam o aplicativo: autenticação,
+                contrato de requisição e resposta, tratamento de erro e leitura de base legada em
+                Firebird.
+              </li>
+              <li>
+                <strong>Servidores e ambientes:</strong> operação das máquinas virtuais e dos
+                containers Docker onde o sistema roda &mdash; acesso remoto por SSH, VPN e Portainer,
+                abertura de portas e firewall, configuração de proxy reverso, redes Docker, deploy e
+                diagnóstico de falha de rede em produção.
+              </li>
+              <li>
+                <strong>Migração de arquitetura:</strong> remoção da camada de cache local em favor de
+                um modelo totalmente online, eliminando divergência de dados entre dispositivo e servidor.
+              </li>
+              <li>
+                <strong>Mensageria integrada ao WhatsApp</strong> em padrão MVVM, com envio
+                automatizado, relatórios de alcance e gestão de preferência de contato.
+              </li>
+              <li>
+                <strong>Integração com sistema externo:</strong> geração de XML em schema fechado,
+                empacotamento, assinatura e transmissão autenticada, com controle de ciclo e
+                rastreabilidade por lote &mdash; a exigência regulatória do setor farmacêutico.
+              </li>
+            </ul>
+            <ul class="chips">
+              <li class="key">Flutter</li><li class="key">Dart</li>
+              <li>REST</li><li>Firebird</li><li>Docker</li><li>Máquinas virtuais</li><li>Git</li>
+            </ul>
+          </div>
+        </article>
+
+        <div class="carousel-head">
+          <h3>Outros projetos</h3>
+          <div class="carousel-nav">
+            <button type="button" data-car-prev aria-label="Projeto anterior">
+              <svg aria-hidden="true"><use href="#i-left"/></svg>
+            </button>
+            <button type="button" data-car-next aria-label="Próximo projeto">
+              <svg aria-hidden="true"><use href="#i-right"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="carousel" data-carousel tabindex="0" role="region" aria-label="Carrossel de projetos">
+
+          <article class="card proj">
+            <div class="proj-img">
+              <img src="assets/verdehub.png" alt="Logo do projeto VerdeHub" loading="lazy">
             </div>
-        </section>
-
-        <section id="contato" class="py-20 md:py-32">
-            <div class="container mx-auto px-6 text-center">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Vamos Conversar?</h2>
-                <p class="max-w-2xl mx-auto text-gray-300 mb-8" style="color: var(--text-color);">
-                    Estou sempre aberto a novas oportunidades e colaborações. Sinta-se à vontade para entrar em contato.
-                </p>
-                <div class="flex justify-center items-center gap-8 mt-8">
-                    <a href="mailto:arycarvalho1969@gmail.com" target="_blank" rel="noopener noreferrer"
-                        class="text-gray-400 hover:text-primary transition-colors duration-300" title="Email">
-                        <i data-lucide="mail" class="w-9 h-9"></i>
-                    </a>
-                    <a href="https://wa.me/5562981795414" target="_blank" rel="noopener noreferrer"
-                        class="text-gray-400 hover:text-primary transition-colors duration-300" title="WhatsApp">
-                        <i data-lucide="message-circle" class="w-9 h-9"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/aryel-s-oliveira-298169271/" target="_blank"
-                        rel="noopener noreferrer"
-                        class="text-gray-400 hover:text-primary transition-colors duration-300" title="LinkedIn">
-                        <i data-lucide="linkedin" class="w-9 h-9"></i>
-                    </a>
-                </div>
-                <div class="mt-12">
-                    <a href="assets/AryelSOliveira.pdf" download>
-                        <button class="download-btn">
-                            <span>Baixar CV</span>
-                        </button>
-                    </a>
-                </div>
+            <div class="proj-body">
+              <h3>VerdeHub</h3>
+              <p class="kind">Intranet corporativa &middot; projeto extensionista</p>
+              <p>
+                Rede social interna para a VerdeLog, conectando setores da empresa. Postagens,
+                comentários, chat e grupos privados. Desenvolvido em grupo, com trabalho
+                interdisciplinar.
+              </p>
+              <ul class="chips">
+                <li>PHP</li><li>YII2</li><li>SQL</li><li>JavaScript</li>
+              </ul>
             </div>
-        </section>
-    </main>
+          </article>
 
-    <button id="to-top-button"
-        class="fixed bottom-4 right-4 z-50 p-3 rounded-full bg-primary text-black shadow-lg opacity-0 translate-y-4 transition-all duration-300">
-        <i data-lucide="arrow-up" class="w-6 h-6"></i>
-    </button>
+          <article class="card proj">
+            <div class="proj-img">
+              <img src="assets/a2Lab.png" alt="Logo do projeto A2 Lab" loading="lazy">
+            </div>
+            <div class="proj-body">
+              <h3>A2 Lab</h3>
+              <p class="kind">Site institucional</p>
+              <p>
+                Site para assistência técnica de consoles e PCs, com montagem de máquinas
+                personalizadas. Foco em responsividade e em conduzir o visitante ao orçamento.
+              </p>
+              <ul class="chips">
+                <li>HTML</li><li>CSS</li><li>JavaScript</li>
+              </ul>
+              <a class="btn" href="https://a2lab.vercel.app" target="_blank" rel="noopener noreferrer">
+                <svg aria-hidden="true"><use href="#i-external"/></svg> Acessar
+              </a>
+            </div>
+          </article>
 
-    <button id="theme-toggle" class="fixed bottom-4 left-4 z-50 p-3 rounded-full bg-gray-700 text-white shadow-lg">
-        <i id="theme-icon" data-lucide="sun" class="w-6 h-6"></i>
-    </button>
+          <article class="card proj">
+            <div class="proj-img">
+              <img src="assets/artedoce.png" alt="Logo do projeto Arte Doce" loading="lazy">
+            </div>
+            <div class="proj-body">
+              <h3>Arte Doce</h3>
+              <p class="kind">Vitrine para confeitaria</p>
+              <p>
+                Site para confeitaria artesanal, pensado para destacar os produtos e levar o visitante
+                ao pedido em poucos cliques. Seções de produtos, marca, depoimentos e contato direto
+                por WhatsApp.
+              </p>
+              <ul class="chips">
+                <li>HTML</li><li>CSS</li><li>JavaScript</li>
+              </ul>
+              <a class="btn" href="https://artedoce.vercel.app" target="_blank" rel="noopener noreferrer">
+                <svg aria-hidden="true"><use href="#i-external"/></svg> Acessar
+              </a>
+            </div>
+          </article>
 
-    <script src="script.js"></script>
+          <article class="card proj">
+            <div class="proj-img">
+              <img src="assets/infra-oracle.svg" alt="Ícone de nuvem representando a infraestrutura provisionada na Oracle Cloud" width="1200" height="675" loading="lazy">
+            </div>
+            <div class="proj-body">
+              <h3>Infraestrutura própria</h3>
+              <p class="kind">Projeto pessoal &middot; nuvem</p>
+              <p>
+                Provisionamento completo de uma máquina virtual na Oracle Cloud para uma aplicação
+                minha: criação da instância, configuração de rede, regras de firewall, chaves de
+                acesso e deploy.
+              </p>
+              <ul class="chips">
+                <li>Oracle Cloud</li><li>VM</li><li>Linux</li><li>SSH</li><li>Firewall</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="card proj">
+            <div class="proj-img">
+              <img src="assets/perfil.png" alt="Ilustração do portfólio Ary.dev" loading="lazy">
+            </div>
+            <div class="proj-body">
+              <h3>Este portfólio</h3>
+              <p class="kind">Página única &middot; sem framework</p>
+              <p>
+                HTML, CSS e JavaScript puros, sem framework nem biblioteca de ícones externa. Tema
+                claro e escuro com persistência, ícones e diagramas em SVG local, e nenhuma
+                dependência de CDN além das fontes.
+              </p>
+              <ul class="chips">
+                <li>HTML</li><li>CSS</li><li>JavaScript</li><li>SVG</li>
+              </ul>
+              <a class="btn" href="https://github.com/AryCSO" target="_blank" rel="noopener noreferrer">
+                <svg aria-hidden="true"><use href="#i-github"/></svg> Código
+              </a>
+            </div>
+          </article>
+
+        </div>
+        <div class="dots" data-car-dots aria-label="Ir para o projeto"></div>
+      </div>
+    </section>
+
+    <!-- ===================== FORMAÇÃO ===================== -->
+    <section id="formacao">
+      <div class="wrap">
+        <p class="sec-label">06 &middot; Formação</p>
+        <h2 class="sec-title">Formação &amp; certificados</h2>
+
+        <div class="edu reveal">
+          <div class="card edu-card">
+            <h3><svg aria-hidden="true"><use href="#i-cap"/></svg> Formação acadêmica</h3>
+            <div class="degree">
+              <b>Análise e Desenvolvimento de Sistemas</b>
+              <p class="inst">Centro Universitário Nossa Senhora Aparecida (UniFANAP) &middot; 2023 – 2025</p>
+              <span class="status">Último período pendente para conclusão</span>
+            </div>
+          </div>
+
+          <div class="card edu-card">
+            <h3><svg aria-hidden="true"><use href="#i-award"/></svg> Certificados</h3>
+            <ul class="certs">
+              <li><b>Linguagem de Programação Python</b><span>Fundação Bradesco</span></li>
+              <li><b>PHP Moderno</b><span>Curso em Vídeo</span></li>
+              <li><b>HTML5 e CSS3</b><span>Curso em Vídeo</span></li>
+              <li><b>MySQL</b><span>Curso em Vídeo</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CONTATO ===================== -->
+    <section id="contato" class="contact">
+      <div class="wrap">
+        <p class="sec-label">07 &middot; Contato</p>
+        <h2 class="sec-title">Vamos conversar?</h2>
+        <p>
+          Aberto a oportunidades como desenvolvedor mobile e web. Me interessa principalmente onde dá
+          para trabalhar o sistema inteiro. Respondo rápido.
+        </p>
+
+        <div class="social">
+          <a href="mailto:arycarvalho1969@gmail.com">
+            <svg aria-hidden="true"><use href="#i-mail"/></svg> E-mail
+          </a>
+          <a href="https://wa.me/5562981795414" target="_blank" rel="noopener noreferrer">
+            <svg aria-hidden="true"><use href="#i-whatsapp"/></svg> WhatsApp
+          </a>
+          <a href="https://www.linkedin.com/in/aryel-s-oliveira-298169271/" target="_blank" rel="noopener noreferrer">
+            <svg aria-hidden="true"><use href="#i-linkedin"/></svg> LinkedIn
+          </a>
+          <a href="https://github.com/AryCSO" target="_blank" rel="noopener noreferrer">
+            <svg aria-hidden="true"><use href="#i-github"/></svg> GitHub
+          </a>
+        </div>
+
+        <a class="btn btn-primary" href="assets/AryelSOliveira.pdf" download>
+          <svg aria-hidden="true"><use href="#i-download"/></svg> Baixar currículo em PDF
+        </a>
+      </div>
+    </section>
+
+    <div class="wrap">
+      <footer>
+        <span>&copy; <span id="ano">2026</span> Aryel S. Oliveira &middot; Aparecida de Goiânia, GO</span>
+        <span>Feito em HTML, CSS e JavaScript &mdash; <a href="https://github.com/AryCSO" target="_blank" rel="noopener noreferrer">código no GitHub</a></span>
+      </footer>
+    </div>
+
+  </main>
+
+  <button id="theme-toggle" class="fab" type="button" aria-label="Alternar tema claro e escuro">
+    <svg aria-hidden="true"><use href="#i-sun" id="theme-icon"/></svg>
+  </button>
+
+  <button id="to-top" class="fab" type="button" aria-label="Voltar ao topo">
+    <svg aria-hidden="true"><use href="#i-up"/></svg>
+  </button>
+
+  <script src="script.js"></script>
 </body>
 
 </html>

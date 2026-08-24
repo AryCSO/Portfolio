@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675"
+     role="img" aria-labelledby="ttl">
+  <title id="ttl">Nuvem — infraestrutura provisionada na Oracle Cloud</title>
+
+  <style>
+    /* Fundo transparente de propósito: o card já pinta o --surface-2 do tema,
+       então a arte nunca aparece sobre o fundo do tema errado. Um SVG carregado
+       por &lt;img&gt; não enxerga o data-theme da página, só o esquema do sistema,
+       então o media query ajusta apenas o tom do dourado. Se ele divergir do
+       botão de tema, o pior caso é um dourado levemente fora — nunca um bloco
+       de cor invertido. */
+    .tint { stop-color: #D4AF37; }
+    @media (prefers-color-scheme: light) {
+      .tint { stop-color: #96780F; }
+    }
+  </style>
+
+  <defs>
+    <radialGradient id="halo" cx="50%" cy="50%" r="50%">
+      <stop class="tint" offset="0%"   stop-opacity=".20"/>
+      <stop class="tint" offset="45%"  stop-opacity=".08"/>
+      <stop class="tint" offset="100%" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- corpo: denso no topo, dissolvendo na base -->
+    <linearGradient id="body" x1="0" y1="0" x2="0" y2="1">
+      <stop class="tint" offset="0%"   stop-opacity=".30"/>
+      <stop class="tint" offset="55%"  stop-opacity=".15"/>
+      <stop class="tint" offset="100%" stop-opacity=".05"/>
+    </linearGradient>
+
+    <!-- traço perdendo intensidade para baixo, o que dá volume -->
+    <linearGradient id="edge" x1="0.15" y1="0" x2="0.5" y2="1">
+      <stop class="tint" offset="0%"   stop-opacity="1"/>
+      <stop class="tint" offset="65%"  stop-opacity=".8"/>
+      <stop class="tint" offset="100%" stop-opacity=".55"/>
+    </linearGradient>
+
+    <filter id="soft" x="-25%" y="-25%" width="150%" height="150%">
+      <feDropShadow dx="0" dy="16" stdDeviation="20" flood-color="#000" flood-opacity=".18"/>
+    </filter>
+
+    <!-- Silhueta derivada de três círculos reais, não de bezier no olho:
+           grande  centro (215,185) r=108   → domina, define o topo
+           esquerdo centro (110,232) r=67   → lóbulo menor
+           direito centro (345,218) r=80    → lóbulo médio
+         Os pontos de troca são as interseções calculadas entre os círculos,
+         e os dois laterais tangenciam a base em y=298. Por isso os bojos
+         saem redondos, os vales ficam na altura certa e a base fecha reta. -->
+    <path id="cloud"
+          d="M110 298
+             A67 67   0 0 1 109 166
+             A108 108 0 0 1 315 144
+             A80 80   0 1 1 345 298
+             Z"/>
+  </defs>
+
+  <ellipse cx="600" cy="337" rx="430" ry="265" fill="url(#halo)"/>
+
+  <g transform="translate(178 -1) scale(1.8)" filter="url(#soft)">
+    <use href="#cloud" fill="url(#body)"/>
+    <use href="#cloud" fill="none" stroke="url(#edge)" stroke-width="5" stroke-linejoin="round"/>
+  </g>
+</svg>
